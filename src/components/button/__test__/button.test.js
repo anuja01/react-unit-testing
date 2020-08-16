@@ -5,7 +5,7 @@ import Button from "../button";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import renderer from 'react-test-renderer';
+import renderer from 'react-test-renderer'; // for snapshot testing
 
 describe("Button", () => {
   it("render without crashing", () => {
@@ -18,10 +18,11 @@ describe("Button", () => {
     expect(getByTestId("button")).toHaveTextContent("Click Here!!");
   });
 
+  // Snapshot testing
   it("matches snapshot", () => {
     const tree = renderer.create(<Button label="save"></Button>)
     expect(tree).toMatchSnapshot();
   })
 });
 
-// Snapshot testing
+

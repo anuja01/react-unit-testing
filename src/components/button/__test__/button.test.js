@@ -1,12 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom"; //to render components in test
-import Button from "../button";
 
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
-
 import renderer from 'react-test-renderer'; // for snapshot testing
 
+import Button from "../button";
 describe("Button", () => {
   it("render without crashing", () => {
     const div = document.createElement("div");
@@ -24,5 +23,6 @@ describe("Button", () => {
     expect(tree).toMatchSnapshot();
   })
 });
+
 
 
